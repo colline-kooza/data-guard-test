@@ -1,8 +1,11 @@
 import React from "react";
 
-export default function Guards({ data, title }) {
+export default function Guards({ data, title, link }) {
   return (
-    <div className="flex min-h-screen flex-col p-3 lg:p-8 gap-8 bg-gray-100">
+    <div
+      id={link}
+      className="flex min-h-screen flex-col p-3 lg:p-8 gap-8 bg-gray-100 "
+    >
       <h2 className="font-[700]">{title}</h2>
       <div className="guard-container grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data?.map((guard) => {

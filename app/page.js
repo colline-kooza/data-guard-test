@@ -5,6 +5,7 @@ import { FaCoins } from "react-icons/fa";
 import { BsFileEarmarkPerson } from "react-icons/bs";
 import Guards from "@/Components/Guards";
 import { useCart } from "@/Components/ContextApi";
+import Link from "next/link";
 
 export default function page() {
   const { data } = useCart();
@@ -32,7 +33,8 @@ export default function page() {
             Data<span className="text-[25px] font-[700]">Guard</span>
           </h2>
           <div className="data-icons flex flex-col gap-4">
-            <button
+            <Link
+              href="#marketing"
               onClick={changeMarketing}
               className={
                 guard == "marketing"
@@ -42,8 +44,9 @@ export default function page() {
             >
               <CgMenuGridO />
               Marketing
-            </button>
-            <button
+            </Link>
+            <Link
+              href="#finance"
               onClick={changeFinance}
               className={
                 guard == "finance"
@@ -53,8 +56,9 @@ export default function page() {
             >
               <FaCoins />
               Finance
-            </button>
-            <button
+            </Link>
+            <Link
+              href="#Personnel"
               onClick={changePersonel}
               className={
                 guard == "personel"
@@ -64,7 +68,7 @@ export default function page() {
             >
               <BsFileEarmarkPerson size={18} />
               Personnel
-            </button>
+            </Link>
           </div>
         </div>
         <div className=" mb-8 flex items-center justify-center gap-3">
@@ -79,11 +83,11 @@ export default function page() {
       </section>
       <section className="">
         {guard == "marketing" ? (
-          <Guards title="Marketing Plugins" data={Marketing} />
+          <Guards link="marketing" title="Marketing Plugins" data={Marketing} />
         ) : guard == "finance" ? (
-          <Guards title="Finance Plugins" data={Finance} />
+          <Guards link="finance" title="Finance Plugins" data={Finance} />
         ) : (
-          <Guards title="Personnel Plugins" data={Personnel} />
+          <Guards link="Personnel" title="Personnel Plugins" data={Personnel} />
         )}
       </section>
     </div>
