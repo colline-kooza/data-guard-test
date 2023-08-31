@@ -9,6 +9,8 @@ import Link from "next/link";
 
 export default function page() {
   const { data } = useCart();
+  const { pluginsEnabled } = useCart();
+  const { setPluginsEnabled } = useCart();
   const Marketing = data?.filter((guard) => guard.marketing);
   const Finance = data?.filter((guard) => guard.finance);
   const Personnel = data?.filter((guard) => guard.personnel);
@@ -72,12 +74,19 @@ export default function page() {
           </div>
         </div>
         <div className=" mb-8 flex items-center justify-center gap-3">
-          <h3 className="text-[8px] lg:text-[13px] sm:text-[13px] font-[600]">
-            All plugins disabled
-          </h3>
-          <label class="switch ">
+          <div className="text-[8px] lg:text-[13px] sm:text-[13px] font-[600]">
+            {pluginsEnabled == false ? (
+              <h2>Plugins are Unenabled</h2>
+            ) : (
+              <h2>Plugins are Enabled</h2>
+            )}
+          </div>
+          <label
+            onChange={() => setPluginsEnabled(!pluginsEnabled)}
+            class="switch "
+          >
             <input className="hidden" type="checkbox" />
-            <span class="slider"></span>
+            <span class="slider bg-green-800"></span>
           </label>
         </div>
       </section>

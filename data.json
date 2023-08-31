@@ -32,7 +32,8 @@
   {
     "title": "Time Management",
     "description": "Learn techniques to effectively manage time and prioritize tasks for improved productivity.",
-    "personnel": true
+    "personnel": true,
+    "isDisabled": false
   },
   {
     "title": "Stress Reduction",

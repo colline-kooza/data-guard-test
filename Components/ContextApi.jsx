@@ -4,8 +4,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
+  const [pluginsEnabled, setPluginsEnabled] = useState(true);
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function data() {
@@ -24,6 +24,8 @@ export function CartProvider({ children }) {
     <CartContext.Provider
       value={{
         data,
+        pluginsEnabled,
+        setPluginsEnabled,
       }}
     >
       {children}
