@@ -47,12 +47,12 @@ export default function Guards() {
             return (
               <div
                 key={guard.id}
-                className={`container flex flex-col gap-5 border-solid border-2 border-gray-400 rounded lg:w-[90%] h-full p-4 ${
-                  guard.status === "ok" ? "border-solid border-red-400" : ""
-                }`}
+                className={
+                  "container flex flex-col gap-5 border-solid border-2 border-gray-500 rounded lg:w-[90%] h-full p-1 sm:p-4"
+                }
               >
                 <div className="container-header flex justify-between">
-                  <h2 className="text-[14px] font-[800]">{guard.title}</h2>
+                  <h2 className="text-[12px] font-[900] sm:text-[15px]">{guard.title}</h2>
                   <label className="switch">
                     <input
                       className="hidden"

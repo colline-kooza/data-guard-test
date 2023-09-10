@@ -23,7 +23,7 @@ export default function SideBar() {
   }
   return (
     <div className="flex max-full min-h-screen">
-      <section className="bg-gray-300 h-[80vh] sm:min-h-[100vh]  lg:min-h-[100vh] sm:w-[35%] lg:w-[90%] flex flex-col justify-between ">
+      <section className="bg-gray-300 h-[80vh] sm:min-h-[100vh]  lg:min-h-[100vh] w-[100%] sm:w-[100%] lg:w-[90%] flex flex-col justify-between ">
         <div className="data-header p-4 flex flex-col gap-5">
           <h2 className="text-[24px] font-[500]">
             Data<span className="text-[25px] font-[700]">Guard</span>

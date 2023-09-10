@@ -1,5 +1,6 @@
 "use client";
 import { useCart } from "@/Components/ContextApi";
+import ToggleButton from "@/Components/ToggleButton";
 import { useState } from "react";
 
 export default function Guards() {
@@ -27,12 +28,9 @@ export default function Guards() {
         body: JSON.stringify({ singleGuard }),
       });
 
-      console.log(response);
-
       if (response.status === 200) {
-        singleGuard.backgroundColor = "red";
       } else {
-        console.error("Error updating data .");
+        console.error("Error updating data");
       }
     } catch (error) {
       console.error("Error", error);
@@ -40,8 +38,12 @@ export default function Guards() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col p-1 lg:p-7 gap-8 bg-gray-100 ">
-      <h2 className="font-[700]">Marketing</h2>
+    <div className="flex min-h-screen flex-col p-1 lg:p-7 gap-8  dark:bg-slate-900 bg-slate-100">
+      <div className=" flex justify-between">
+        <h2 className="font-[700] dark:text-white">Marketing</h2>
+        <ToggleButton />
+      </div>
+
       {loading ? (
         <span class="loader absolute top-[50%] right-[5rem] lg:right-[20rem] sm:right-[15rem]"></span>
       ) : (
@@ -51,12 +53,14 @@ export default function Guards() {
               return (
                 <div
                   key={guard.id}
-                  className={`container flex flex-col gap-5 border-solid border-2 border-gray-400 rounded lg:w-[90%] h-full p-4 ${
-                    guard.status === "ok" ? "border-solid border-red-400" : ""
-                  }`}
+                  className={
+                    "container flex flex-col gap-5 border-solid border-2 border-gray-500 dark:border-gray-200 rounded lg:w-[90%] h-full p-1 sm:p-4"
+                  }
                 >
                   <div className="container-header flex justify-between">
-                    <h2 className="text-[14px] font-[800]">{guard.title}</h2>
+                    <h2 className="text-[12px] font-[900] sm:text-[15px] dark:text-white dark:font-[900]">
+                      {guard.title}
+                    </h2>
                     <label className="switch">
                       <input
                         className="hidden"
@@ -64,10 +68,10 @@ export default function Guards() {
                         onChange={() => toggleDisabled(guard.id)}
                         checked={!guard.isDisabled}
                       />
-                      <span className="slider bg-green-600"></span>
+                      <span className="slider bg-green-600 dark:bg-green-400"></span>
                     </label>
                   </div>
-                  <p className="text-[12px] sm:text-[15px] lg:text-[15px]">
+                  <p className="text-[12px] sm:text-[15px] lg:text-[15px] dark:text-gray-500">
                     {guard.description}
                   </p>
                 </div>
