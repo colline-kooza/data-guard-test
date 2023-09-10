@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
       <body className="bg-slate-100 dark:bg-slate-900">
         <Providers>
           <CartProvider>
-            <div className="flex w-ful ">
+            <div className="flex w-ful">
               <div className="w-[50%] mr-1 text-slate-800 ">
                 <SideBar />
               </div>
-              {children}
+              <div className="">{children}</div>
             </div>
           </CartProvider>
         </Providers>

@@ -40,7 +40,7 @@ export default function Guards() {
   return (
     <div className="flex min-h-screen flex-col p-1 lg:p-7 gap-8  dark:bg-slate-900 bg-slate-100">
       <div className=" flex justify-between">
-        <h2 className="font-[700] dark:text-white">Marketing</h2>
+        <h2 className="font-[700] dark:text-white ">Marketing</h2>
         <ToggleButton />
       </div>
 
@@ -82,7 +82,7 @@ export default function Guards() {
               return (
                 <div
                   key={guard.id}
-                  className="container flex flex-col gap-5 border-solid border-2 border-gray-200 rounded lg:w-[90%] h-full p-4"
+                  className="container flex flex-col gap-5 border-solid border-2 border-gray-200 rounded lg:w-[90%] h-full p-4 dark:bg-gray-500"
                 >
                   <div className="container-header flex justify-between">
                     <h2 className="text-[16px] text-gray-300 font-[800]">

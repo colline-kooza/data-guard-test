@@ -5,7 +5,7 @@ import { BsMoon, BsSun } from "react-icons/bs";
 
 export default function ToggleButton() {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
+  // console.log(theme);
   return (
     <button
       className="py-2 px-4 text-slate-100 dark:text-white bg-gray-500 dark:bg-gray-500 rounded-lg"
