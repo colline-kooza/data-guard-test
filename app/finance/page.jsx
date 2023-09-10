@@ -1,11 +1,10 @@
 "use client";
 import { useCart } from "@/Components/ContextApi";
-import { useState } from "react";
 
 export default function Guards() {
   const { pluginsEnabled } = useCart();
   const { data, setData } = useCart();
-  const Marketing = data?.filter((guard) => guard.marketing);
+  const Finance = data?.filter((guard) => guard.finance);
 
   const toggleDisabled = async (id) => {
     try {
@@ -29,22 +28,22 @@ export default function Guards() {
 
       console.log(response);
 
-      if (response.status === 200) {
+      if (response.status === ok) {
         singleGuard.backgroundColor = "red";
       } else {
-        console.error("Error updating data .");
+        console.error("Error updating data");
       }
     } catch (error) {
-      console.error("Error", error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <div className="flex min-h-screen flex-col p-1 lg:p-7 gap-8 bg-gray-100 ">
-      <h2 className="font-[700]">Marketing</h2>
+      <h2 className="font-[700]">Finance</h2>
       <div className="guard-container grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {pluginsEnabled &&
-          Marketing?.map((guard) => {
+          Finance?.map((guard) => {
             return (
               <div
                 key={guard.id}
@@ -71,7 +70,7 @@ export default function Guards() {
             );
           })}
         {!pluginsEnabled &&
-          Marketing?.map((guard) => {
+          Finance?.map((guard) => {
             return (
               <div
                 key={guard.id}

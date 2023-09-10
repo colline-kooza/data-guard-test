@@ -1,6 +1,7 @@
 import { CartProvider } from "@/Components/ContextApi";
 import "../styles/main.scss";
 import { Inter } from "next/font/google";
+import SideBar from "@/Components/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,8 +13,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <CartProvider>{children}</CartProvider>
+      <body className="bg-gray-100">
+        <CartProvider>
+          <div className="flex w-full">
+            <div className="w-[50%]">
+              <SideBar />
+            </div>
+            {children}
+          </div>
+        </CartProvider>
       </body>
     </html>
   );
