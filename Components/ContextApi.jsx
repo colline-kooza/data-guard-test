@@ -31,6 +31,7 @@ export function CartProvider({ children }) {
       value={{
         data,
         setData,
+        loading,
         pluginsEnabled,
         setPluginsEnabled,
         setEnabled,
