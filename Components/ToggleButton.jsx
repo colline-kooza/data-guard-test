@@ -12,9 +12,9 @@ export default function ToggleButton() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
-        <BsSun id="icon" className="w-3 h-3 " />
+        <BsSun id="icon"  />
       ) : (
-        <BsMoon id="icon" className="w-3 h-3 " />
+        <BsMoon id="icon" />
       )}
     </button>
   );
