@@ -5,6 +5,13 @@
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
 }
+.side-bar {
+  background-color: red;
+  .data-header {
+    padding: 1rem;
+  }
+}
+
 .loader {
   width: 48px;
   height: 48px;
