@@ -8,13 +8,13 @@ export default function ToggleButton() {
   // console.log(theme);
   return (
     <button
-      className="py-2 px-4 text-slate-100 dark:text-white bg-gray-500 dark:bg-gray-500 rounded-lg"
+      className="button dark:text-white dark:bg-gray-500"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
-        <BsSun className="w-3 h-3 " />
+        <BsSun id="icon" className="w-3 h-3 " />
       ) : (
-        <BsMoon className="w-3 h-3 " />
+        <BsMoon id="icon" className="w-3 h-3 " />
       )}
     </button>
   );
