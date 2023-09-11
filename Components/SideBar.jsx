@@ -26,7 +26,8 @@ export default function SideBar() {
       <section className="bg-gray-400 h-[80vh] sm:min-h-[100vh]  lg:min-h-[100vh] w-[100%] sm:w-[100%] lg:w-[90%] flex flex-col justify-between ">
         <div className="data-header p-4 flex flex-col gap-5">
           <h2 className="text-[24px] font-[500]">
-            Data<span className="text-[25px] font-[700]">Guard</span>
+            Data
+            <span className="text-[25px] text-red-400 font-[700]">Guard</span>
           </h2>
           <div className="data-icons flex flex-col gap-4">
             <Link
